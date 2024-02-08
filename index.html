@@ -2199,6 +2199,23 @@
             };
             return button;
         }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////JSON STUFF
+        // Load beatmap data from JSON file
+        fetch('beatmapData.json')
+            .then(response => response.json())
+            .then(data => {
+                // Create buttons dynamically
+                const beatmapPacksContainer = document.getElementById('beatmapPacksContainer');
+
+                data.beatmapPacks.forEach(pack => {
+                    const packButton = document.createElement('button');
+                    packButton.textContent = pack.packName;
+                    packButton.onclick = () => toggleBeatmapList(pack.packName, pack.beatmapIds);
+                    beatmapPacksContainer.appendChild(packButton);
+                });
+            })
+            .catch(error => console.error('Error loading beatmap data:', error));
     </script>
 </body>
 </html>
