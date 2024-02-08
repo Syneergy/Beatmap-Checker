@@ -196,27 +196,32 @@
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Array of beatmap IDs for BP#1
-                var beatmapId1 = [75, 54, 119, 80, 86, 88, 165, 121, 188, 96, 101, 100];
-
                 // Get the ul element
                 var bp1BeatmapList = document.getElementById("bp1BeatmapList");
 
-                // Loop through beatmap IDs and create list items
-                beatmapId1.forEach(function (beatmapId) {
-                    var li = document.createElement("li");
-                    li.setAttribute("data-beatmap", beatmapId);
-                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                    li.onclick = function (event) {
-                        handleBeatmapClick(beatmapId, event);
-                    };
+                // Load beatmap data from JSON file
+                fetch('./data/beatmapData.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Access the beatmapIds array for BP#1
+                        var beatmapId1 = data.beatmapPacks.find(pack => pack.packName === "BP#1").beatmapIds;
 
-                    // Append li to ul
-                    bp1BeatmapList.appendChild(li);
-                });
+                        // Loop through beatmap IDs and create list items
+                        beatmapId1.forEach(function (beatmapId) {
+                            var li = document.createElement("li");
+                            li.setAttribute("data-beatmap", beatmapId);
+                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                            li.onclick = function (event) {
+                                handleBeatmapClick(beatmapId, event);
+                            };
+
+                            // Append li to ul
+                            bp1BeatmapList.appendChild(li);
+                        });
+                    })
+                    .catch(error => console.error('Error loading beatmap data:', error));
             });
         </script>
-
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#2')" data-list="beatmapList2">BP#2</button>
@@ -227,27 +232,32 @@
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Array of beatmap IDs for BP#2
-                var beatmapId2 = [104, 108, 110, 220, 114, 116, 170, 145, 120, 122, 123, 124, 125, 129, 131, 132, 133, 134, 152, 137, 141, 162, 164, 144, 146];
-
                 // Get the ul element
                 var bp2BeatmapList = document.getElementById("bp2BeatmapList");
 
-                // Loop through beatmap IDs and create list items
-                beatmapId2.forEach(function (beatmapId) {
-                    var li = document.createElement("li");
-                    li.setAttribute("data-beatmap", beatmapId);
-                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                    li.onclick = function (event) {
-                        handleBeatmapClick(beatmapId, event);
-                    };
+                // Load beatmap data from JSON file for BP#2
+                fetch('./data/beatmapData.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Access the beatmapIds array for BP#2
+                        var beatmapId2 = data.beatmapPacks.find(pack => pack.packName === "BP#2").beatmapIds;
 
-                    // Append li to ul
-                    bp2BeatmapList.appendChild(li);
-                });
+                        // Loop through beatmap IDs and create list items
+                        beatmapId2.forEach(function (beatmapId) {
+                            var li = document.createElement("li");
+                            li.setAttribute("data-beatmap", beatmapId);
+                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                            li.onclick = function (event) {
+                                handleBeatmapClick(beatmapId, event);
+                            };
+
+                            // Append li to ul
+                            bp2BeatmapList.appendChild(li);
+                        });
+                    })
+                    .catch(error => console.error('Error loading beatmap data:', error));
             });
         </script>
-
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#3')" data-list="beatmapList3">BP#3</button>
@@ -258,27 +268,31 @@
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Array of beatmap IDs for BP#3
-                var beatmapId3 = [147, 148, 200, 250, 195, 155, 178, 160, 159, 161, 166, 167, 171, 275, 172, 174, 177, 187, 182, 183, 186, 960, 324, 193, 194, 196, 198, 305, 203, 204];
-
                 // Get the ul element
                 var bp3BeatmapList = document.getElementById("bp3BeatmapList");
 
-                // Loop through beatmap IDs and create list items
-                beatmapId3.forEach(function (beatmapId) {
-                    var li = document.createElement("li");
-                    li.setAttribute("data-beatmap", beatmapId);
-                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                    li.onclick = function (event) {
-                        handleBeatmapClick(beatmapId, event);
-                    };
+                // Load beatmap data from JSON file for BP#3
+                fetch('./data/beatmapData.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Access the beatmapIds array for BP#3
+                        var beatmapId3 = data.beatmapPacks.find(pack => pack.packName === "BP#3").beatmapIds;
 
-                    // Append li to ul
-                    bp3BeatmapList.appendChild(li);
-                });
+                        // Loop through beatmap IDs and create list items
+                        beatmapId3.forEach(function (beatmapId) {
+                            var li = document.createElement("li");
+                            li.setAttribute("data-beatmap", beatmapId);
+                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                            li.onclick = function (event) {
+                                handleBeatmapClick(beatmapId, event);
+                            };
+                            // Append li to ul
+                            bp3BeatmapList.appendChild(li);
+                        });
+                    })
+                    .catch(error => console.error('Error loading beatmap data:', error));
             });
         </script>
-
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#4')" data-list="beatmapList4">BP#4</button>
@@ -289,28 +303,31 @@
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Array of beatmap IDs for BP#4
-                var beatmapId4 = [208, 209, 210, 212, 215, 216, 217, 221, 226, 223, 228, 232, 234, 239, 238, 242, 249, 254, 256, 259, 272, 271, 278, 280, 283, 284, 286, 288, 290];
-
                 // Get the ul element
                 var bp4BeatmapList = document.getElementById("bp4BeatmapList");
 
-                // Loop through beatmap IDs and create list items
-                beatmapId4.forEach(function (beatmapId) {
-                    var li = document.createElement("li");
-                    li.setAttribute("data-beatmap", beatmapId);
-                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                    li.onclick = function (event) {
-                        handleBeatmapClick(beatmapId, event);
-                    };
+                // Load beatmap data from JSON file for BP#4
+                fetch('./data/beatmapData.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Access the beatmapIds array for BP#4
+                        var beatmapId4 = data.beatmapPacks.find(pack => pack.packName === "BP#4").beatmapIds;
 
-                    // Append li to ul
-                    bp4BeatmapList.appendChild(li);
-                });
+                        // Loop through beatmap IDs and create list items
+                        beatmapId4.forEach(function (beatmapId) {
+                            var li = document.createElement("li");
+                            li.setAttribute("data-beatmap", beatmapId);
+                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                            li.onclick = function (event) {
+                                handleBeatmapClick(beatmapId, event);
+                            };
+                            // Append li to ul
+                            bp4BeatmapList.appendChild(li);
+                        });
+                    })
+                    .catch(error => console.error('Error loading beatmap data:', error));
             });
         </script>
-
-
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#5')" data-list="beatmapList5">BP#5</button>
@@ -321,28 +338,31 @@
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Array of beatmap IDs for BP#5
-                var beatmapId5 = [292, 296, 298, 300, 322, 307, 308, 309, 310, 312, 315, 319, 328, 330, 332, 333, 334, 336, 338, 341, 344, 348, 350, 352, 354, 357, 365, 368, 370];
-
                 // Get the ul element
                 var bp5BeatmapList = document.getElementById("bp5BeatmapList");
 
-                // Loop through beatmap IDs and create list items
-                beatmapId5.forEach(function (beatmapId) {
-                    var li = document.createElement("li");
-                    li.setAttribute("data-beatmap", beatmapId);
-                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                    li.onclick = function (event) {
-                        handleBeatmapClick(beatmapId, event);
-                    };
+                // Load beatmap data from JSON file for BP#4
+                fetch('./data/beatmapData.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Access the beatmapIds array for BP#5
+                        var beatmapId5 = data.beatmapPacks.find(pack => pack.packName === "BP#5").beatmapIds;
 
-                    // Append li to ul
-                    bp5BeatmapList.appendChild(li);
-                });
+                        // Loop through beatmap IDs and create list items
+                        beatmapId5.forEach(function (beatmapId) {
+                            var li = document.createElement("li");
+                            li.setAttribute("data-beatmap", beatmapId);
+                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                            li.onclick = function (event) {
+                                handleBeatmapClick(beatmapId, event);
+                            };
+                            // Append li to ul
+                            bp5BeatmapList.appendChild(li);
+                        });
+                    })
+                    .catch(error => console.error('Error loading beatmap data:', error));
             });
         </script>
-
-
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#6')" data-list="beatmapList6">BP#6</button>
@@ -2022,25 +2042,14 @@
             });
         </script>
 
+        <div class="dropdown-container" id="beatmapPacksContainer"></div>
+
 
 
 
 
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Set button colors based on initial checkbox state for each BP
-            updateButtonColors();
-
-            // Add event listeners to all checkboxes
-            var checkboxes = document.querySelectorAll('.checkbox');
-            checkboxes.forEach(function (checkbox) {
-                checkbox.addEventListener('change', function () {
-                    updateButtonColors();
-                });
-            });
-        });
-
         //Download Button link
         function handleDownloadClick(beatmapId) {
             // Add your custom logic here if needed
@@ -2202,20 +2211,6 @@
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////JSON STUFF
         // Load beatmap data from JSON file
-        fetch('beatmapData.json')
-            .then(response => response.json())
-            .then(data => {
-                // Create buttons dynamically
-                const beatmapPacksContainer = document.getElementById('beatmapPacksContainer');
-
-                data.beatmapPacks.forEach(pack => {
-                    const packButton = document.createElement('button');
-                    packButton.textContent = pack.packName;
-                    packButton.onclick = () => toggleBeatmapList(pack.packName, pack.beatmapIds);
-                    beatmapPacksContainer.appendChild(packButton);
-                });
-            })
-            .catch(error => console.error('Error loading beatmap data:', error));
     </script>
 </body>
 </html>
