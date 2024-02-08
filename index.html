@@ -190,345 +190,283 @@
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#1')" data-list="beatmapList1">BP#1</button>
             <div class="beatmap-list" id="beatmapList1">
-                <ul>
-                    <li data-beatmap="75" onclick="handleBeatmapClick(75, event)"><input type="checkbox" class="checkbox">75</li>
-                    <li data-beatmap="54" onclick="handleBeatmapClick(54, event)"><input type="checkbox" class="checkbox">54</li>
-                    <li data-beatmap="119" onclick="handleBeatmapClick(119, event)"><input type="checkbox" class="checkbox">119</li>
-                    <li data-beatmap="80" onclick="handleBeatmapClick(80, event)"><input type="checkbox" class="checkbox">80</li>
-                    <li data-beatmap="86" onclick="handleBeatmapClick(86, event)"><input type="checkbox" class="checkbox">86</li>
-                    <li data-beatmap="88" onclick="handleBeatmapClick(88, event)"><input type="checkbox" class="checkbox">88</li>
-                    <li data-beatmap="165" onclick="handleBeatmapClick(165, event)"><input type="checkbox" class="checkbox">165</li>
-                    <li data-beatmap="121" onclick="handleBeatmapClick(121, event)"><input type="checkbox" class="checkbox">121</li>
-                    <li data-beatmap="188" onclick="handleBeatmapClick(188, event)"><input type="checkbox" class="checkbox">188</li>
-                    <li data-beatmap="96" onclick="handleBeatmapClick(96, event)"><input type="checkbox" class="checkbox">96</li>
-                    <li data-beatmap="101" onclick="handleBeatmapClick(101, event)"><input type="checkbox" class="checkbox">101</li>
-                    <li data-beatmap="100" onclick="handleBeatmapClick(100, event)"><input type="checkbox" class="checkbox">100</li>
-                    <!-- Other beatmap IDs for BP#1 -->
-                </ul>
+                <!-- Beatmap list for BP#1 -->
+                <ul id="bp1BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#1
+                var beatmapId1 = [75, 54, 119, 80, 86, 88, 165, 121, 188, 96, 101, 100];
+
+                // Get the ul element
+                var bp1BeatmapList = document.getElementById("bp1BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId1.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp1BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#2')" data-list="beatmapList2">BP#2</button>
             <div class="beatmap-list" id="beatmapList2">
-                <ul>
-                    <li data-beatmap="104" onclick="handleBeatmapClick(104, event)"><input type="checkbox" class="checkbox">104</li>
-                    <li data-beatmap="108" onclick="handleBeatmapClick(108, event)"><input type="checkbox" class="checkbox">108</li>
-                    <li data-beatmap="110" onclick="handleBeatmapClick(110, event)"><input type="checkbox" class="checkbox">110</li>
-                    <li data-beatmap="220" onclick="handleBeatmapClick(220, event)"><input type="checkbox" class="checkbox">220</li>
-                    <li data-beatmap="114" onclick="handleBeatmapClick(114, event)"><input type="checkbox" class="checkbox">114</li>
-                    <li data-beatmap="116" onclick="handleBeatmapClick(116, event)"><input type="checkbox" class="checkbox">116</li>
-                    <li data-beatmap="170" onclick="handleBeatmapClick(170, event)"><input type="checkbox" class="checkbox">170</li>
-                    <li data-beatmap="145" onclick="handleBeatmapClick(145, event)"><input type="checkbox" class="checkbox">145</li>
-                    <li data-beatmap="120" onclick="handleBeatmapClick(120, event)"><input type="checkbox" class="checkbox">120</li>
-                    <li data-beatmap="122" onclick="handleBeatmapClick(122, event)"><input type="checkbox" class="checkbox">122</li>
-                    <li data-beatmap="123" onclick="handleBeatmapClick(123, event)"><input type="checkbox" class="checkbox">123</li>
-                    <li data-beatmap="124" onclick="handleBeatmapClick(124, event)"><input type="checkbox" class="checkbox">124</li>
-                    <li data-beatmap="125" onclick="handleBeatmapClick(125, event)"><input type="checkbox" class="checkbox">125</li>
-                    <li data-beatmap="129" onclick="handleBeatmapClick(129, event)"><input type="checkbox" class="checkbox">129</li>
-                    <li data-beatmap="131" onclick="handleBeatmapClick(131, event)"><input type="checkbox" class="checkbox">131</li>
-                    <li data-beatmap="132" onclick="handleBeatmapClick(132, event)"><input type="checkbox" class="checkbox">132</li>
-                    <li data-beatmap="133" onclick="handleBeatmapClick(133, event)"><input type="checkbox" class="checkbox">133</li>
-                    <li data-beatmap="134" onclick="handleBeatmapClick(134, event)"><input type="checkbox" class="checkbox">134</li>
-                    <li data-beatmap="152" onclick="handleBeatmapClick(152, event)"><input type="checkbox" class="checkbox">152</li>
-                    <li data-beatmap="137" onclick="handleBeatmapClick(137, event)"><input type="checkbox" class="checkbox">137</li>
-                    <li data-beatmap="141" onclick="handleBeatmapClick(141, event)"><input type="checkbox" class="checkbox">141</li>
-                    <li data-beatmap="162" onclick="handleBeatmapClick(162, event)"><input type="checkbox" class="checkbox">162</li>
-                    <li data-beatmap="164" onclick="handleBeatmapClick(164, event)"><input type="checkbox" class="checkbox">164</li>
-                    <li data-beatmap="144" onclick="handleBeatmapClick(144, event)"><input type="checkbox" class="checkbox">144</li>
-                    <li data-beatmap="146" onclick="handleBeatmapClick(146, event)"><input type="checkbox" class="checkbox">146</li>
-                    <!-- Other beatmap IDs for BP#2 -->
-                </ul>
+                <!-- Beatmap list for BP#2 -->
+                <ul id="bp2BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#2
+                var beatmapId2 = [104, 108, 110, 220, 114, 116, 170, 145, 120, 122, 123, 124, 125, 129, 131, 132, 133, 134, 152, 137, 141, 162, 164, 144, 146];
+
+                // Get the ul element
+                var bp2BeatmapList = document.getElementById("bp2BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId2.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp2BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#3')" data-list="beatmapList3">BP#3</button>
             <div class="beatmap-list" id="beatmapList3">
                 <!-- Beatmap list for BP#3 -->
-                <ul>
-                    <li data-beatmap="147" onclick="handleBeatmapClick(147, event)"><input type="checkbox" class="checkbox">147</li>
-                    <li data-beatmap="148" onclick="handleBeatmapClick(148, event)"><input type="checkbox" class="checkbox">148</li>
-                    <li data-beatmap="200" onclick="handleBeatmapClick(200, event)"><input type="checkbox" class="checkbox">200</li>
-                    <li data-beatmap="250" onclick="handleBeatmapClick(250, event)"><input type="checkbox" class="checkbox">250</li>
-                    <li data-beatmap="195" onclick="handleBeatmapClick(195, event)"><input type="checkbox" class="checkbox">195</li>
-                    <li data-beatmap="155" onclick="handleBeatmapClick(155, event)"><input type="checkbox" class="checkbox">155</li>
-                    <li data-beatmap="178" onclick="handleBeatmapClick(178, event)"><input type="checkbox" class="checkbox">178</li>
-                    <li data-beatmap="160" onclick="handleBeatmapClick(160, event)"><input type="checkbox" class="checkbox">160</li>
-                    <li data-beatmap="159" onclick="handleBeatmapClick(159, event)"><input type="checkbox" class="checkbox">159</li>
-                    <li data-beatmap="161" onclick="handleBeatmapClick(161, event)"><input type="checkbox" class="checkbox">161</li>
-                    <li data-beatmap="166" onclick="handleBeatmapClick(166, event)"><input type="checkbox" class="checkbox">166</li>
-                    <li data-beatmap="167" onclick="handleBeatmapClick(167, event)"><input type="checkbox" class="checkbox">167</li>
-                    <li data-beatmap="171" onclick="handleBeatmapClick(171, event)"><input type="checkbox" class="checkbox">171</li>
-                    <li data-beatmap="275" onclick="handleBeatmapClick(275, event)"><input type="checkbox" class="checkbox">275</li>
-                    <li data-beatmap="172" onclick="handleBeatmapClick(172, event)"><input type="checkbox" class="checkbox">172</li>
-                    <li data-beatmap="174" onclick="handleBeatmapClick(174, event)"><input type="checkbox" class="checkbox">174</li>
-                    <li data-beatmap="177" onclick="handleBeatmapClick(177, event)"><input type="checkbox" class="checkbox">177</li>
-                    <li data-beatmap="187" onclick="handleBeatmapClick(187, event)"><input type="checkbox" class="checkbox">187</li>
-                    <li data-beatmap="182" onclick="handleBeatmapClick(182, event)"><input type="checkbox" class="checkbox">182</li>
-                    <li data-beatmap="183" onclick="handleBeatmapClick(183, event)"><input type="checkbox" class="checkbox">183</li>
-                    <li data-beatmap="186" onclick="handleBeatmapClick(186, event)"><input type="checkbox" class="checkbox">186</li>
-                    <li data-beatmap="960" onclick="handleBeatmapClick(960, event)"><input type="checkbox" class="checkbox">960</li>
-                    <li data-beatmap="324" onclick="handleBeatmapClick(324, event)"><input type="checkbox" class="checkbox">324</li>
-                    <li data-beatmap="193" onclick="handleBeatmapClick(193, event)"><input type="checkbox" class="checkbox">193</li>
-                    <li data-beatmap="194" onclick="handleBeatmapClick(194, event)"><input type="checkbox" class="checkbox">194</li>
-                    <li data-beatmap="196" onclick="handleBeatmapClick(196, event)"><input type="checkbox" class="checkbox">196</li>
-                    <li data-beatmap="198" onclick="handleBeatmapClick(198, event)"><input type="checkbox" class="checkbox">198</li>
-                    <li data-beatmap="305" onclick="handleBeatmapClick(305, event)"><input type="checkbox" class="checkbox">305</li>
-                    <li data-beatmap="203" onclick="handleBeatmapClick(203, event)"><input type="checkbox" class="checkbox">203</li>
-                    <li data-beatmap="204" onclick="handleBeatmapClick(204, event)"><input type="checkbox" class="checkbox">204</li>
-                </ul>
+                <ul id="bp3BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#3
+                var beatmapId3 = [147, 148, 200, 250, 195, 155, 178, 160, 159, 161, 166, 167, 171, 275, 172, 174, 177, 187, 182, 183, 186, 960, 324, 193, 194, 196, 198, 305, 203, 204];
+
+                // Get the ul element
+                var bp3BeatmapList = document.getElementById("bp3BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId3.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp3BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#4')" data-list="beatmapList4">BP#4</button>
             <div class="beatmap-list" id="beatmapList4">
                 <!-- Beatmap list for BP#4 -->
-                <ul>
-                    <li data-beatmap="208" onclick="handleBeatmapClick(208, event)"><input type="checkbox" class="checkbox">208</li>
-                    <li data-beatmap="209" onclick="handleBeatmapClick(209, event)"><input type="checkbox" class="checkbox">209</li>
-                    <li data-beatmap="210" onclick="handleBeatmapClick(210, event)"><input type="checkbox" class="checkbox">210</li>
-                    <li data-beatmap="212" onclick="handleBeatmapClick(212, event)"><input type="checkbox" class="checkbox">212</li>
-                    <li data-beatmap="215" onclick="handleBeatmapClick(215, event)"><input type="checkbox" class="checkbox">215</li>
-                    <li data-beatmap="216" onclick="handleBeatmapClick(216, event)"><input type="checkbox" class="checkbox">216</li>
-                    <li data-beatmap="217" onclick="handleBeatmapClick(217, event)"><input type="checkbox" class="checkbox">217</li>
-                    <li data-beatmap="221" onclick="handleBeatmapClick(221, event)"><input type="checkbox" class="checkbox">221</li>
-                    <li data-beatmap="226" onclick="handleBeatmapClick(226, event)"><input type="checkbox" class="checkbox">226</li>
-                    <li data-beatmap="223" onclick="handleBeatmapClick(223, event)"><input type="checkbox" class="checkbox">223</li>
-                    <li data-beatmap="228" onclick="handleBeatmapClick(228, event)"><input type="checkbox" class="checkbox">228</li>
-                    <li data-beatmap="232" onclick="handleBeatmapClick(232, event)"><input type="checkbox" class="checkbox">232</li>
-                    <li data-beatmap="234" onclick="handleBeatmapClick(234, event)"><input type="checkbox" class="checkbox">234</li>
-                    <li data-beatmap="239" onclick="handleBeatmapClick(239, event)"><input type="checkbox" class="checkbox">239</li>
-                    <li data-beatmap="238" onclick="handleBeatmapClick(238, event)"><input type="checkbox" class="checkbox">238</li>
-                    <li data-beatmap="242" onclick="handleBeatmapClick(242, event)"><input type="checkbox" class="checkbox">242</li>
-                    <li data-beatmap="249" onclick="handleBeatmapClick(249, event)"><input type="checkbox" class="checkbox">249</li>
-                    <li data-beatmap="254" onclick="handleBeatmapClick(254, event)"><input type="checkbox" class="checkbox">254</li>
-                    <li data-beatmap="256" onclick="handleBeatmapClick(256, event)"><input type="checkbox" class="checkbox">256</li>
-                    <li data-beatmap="259" onclick="handleBeatmapClick(259, event)"><input type="checkbox" class="checkbox">259</li>
-                    <li data-beatmap="272" onclick="handleBeatmapClick(272, event)"><input type="checkbox" class="checkbox">272</li>
-                    <li data-beatmap="271" onclick="handleBeatmapClick(271, event)"><input type="checkbox" class="checkbox">271</li>
-                    <li data-beatmap="278" onclick="handleBeatmapClick(278, event)"><input type="checkbox" class="checkbox">278</li>
-                    <li data-beatmap="280" onclick="handleBeatmapClick(280, event)"><input type="checkbox" class="checkbox">280</li>
-                    <li data-beatmap="283" onclick="handleBeatmapClick(283, event)"><input type="checkbox" class="checkbox">283</li>
-                    <li data-beatmap="284" onclick="handleBeatmapClick(284, event)"><input type="checkbox" class="checkbox">284</li>
-                    <li data-beatmap="286" onclick="handleBeatmapClick(286, event)"><input type="checkbox" class="checkbox">286</li>
-                    <li data-beatmap="288" onclick="handleBeatmapClick(288, event)"><input type="checkbox" class="checkbox">288</li>
-                    <li data-beatmap="290" onclick="handleBeatmapClick(290, event)"><input type="checkbox" class="checkbox">290</li>
-                </ul>
+                <ul id="bp4BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#4
+                var beatmapId4 = [208, 209, 210, 212, 215, 216, 217, 221, 226, 223, 228, 232, 234, 239, 238, 242, 249, 254, 256, 259, 272, 271, 278, 280, 283, 284, 286, 288, 290];
+
+                // Get the ul element
+                var bp4BeatmapList = document.getElementById("bp4BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId4.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp4BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#5')" data-list="beatmapList5">BP#5</button>
             <div class="beatmap-list" id="beatmapList5">
                 <!-- Beatmap list for BP#5 -->
-                <ul>
-                    <li data-beatmap="292" onclick="handleBeatmapClick(292, event)"><input type="checkbox" class="checkbox">292</li>
-                    <li data-beatmap="296" onclick="handleBeatmapClick(296, event)"><input type="checkbox" class="checkbox">296</li>
-                    <li data-beatmap="298" onclick="handleBeatmapClick(298, event)"><input type="checkbox" class="checkbox">298</li>
-                    <li data-beatmap="300" onclick="handleBeatmapClick(300, event)"><input type="checkbox" class="checkbox">300</li>
-                    <li data-beatmap="322" onclick="handleBeatmapClick(322, event)"><input type="checkbox" class="checkbox">322</li>
-                    <li data-beatmap="307" onclick="handleBeatmapClick(307, event)"><input type="checkbox" class="checkbox">307</li>
-                    <li data-beatmap="308" onclick="handleBeatmapClick(308, event)"><input type="checkbox" class="checkbox">308</li>
-                    <li data-beatmap="309" onclick="handleBeatmapClick(309, event)"><input type="checkbox" class="checkbox">309</li>
-                    <li data-beatmap="310" onclick="handleBeatmapClick(310, event)"><input type="checkbox" class="checkbox">310</li>
-                    <li data-beatmap="312" onclick="handleBeatmapClick(312, event)"><input type="checkbox" class="checkbox">312</li>
-                    <li data-beatmap="315" onclick="handleBeatmapClick(315, event)"><input type="checkbox" class="checkbox">315</li>
-                    <li data-beatmap="319" onclick="handleBeatmapClick(319, event)"><input type="checkbox" class="checkbox">319</li>
-                    <li data-beatmap="328" onclick="handleBeatmapClick(328, event)"><input type="checkbox" class="checkbox">328</li>
-                    <li data-beatmap="330" onclick="handleBeatmapClick(330, event)"><input type="checkbox" class="checkbox">330</li>
-                    <li data-beatmap="332" onclick="handleBeatmapClick(332, event)"><input type="checkbox" class="checkbox">332</li>
-                    <li data-beatmap="333" onclick="handleBeatmapClick(333, event)"><input type="checkbox" class="checkbox">333</li>
-                    <li data-beatmap="334" onclick="handleBeatmapClick(334, event)"><input type="checkbox" class="checkbox">334</li>
-                    <li data-beatmap="336" onclick="handleBeatmapClick(336, event)"><input type="checkbox" class="checkbox">336</li>
-                    <li data-beatmap="338" onclick="handleBeatmapClick(338, event)"><input type="checkbox" class="checkbox">338</li>
-                    <li data-beatmap="341" onclick="handleBeatmapClick(341, event)"><input type="checkbox" class="checkbox">341</li>
-                    <li data-beatmap="344" onclick="handleBeatmapClick(344, event)"><input type="checkbox" class="checkbox">344</li>
-                    <li data-beatmap="348" onclick="handleBeatmapClick(348, event)"><input type="checkbox" class="checkbox">348</li>
-                    <li data-beatmap="350" onclick="handleBeatmapClick(350, event)"><input type="checkbox" class="checkbox">350</li>
-                    <li data-beatmap="352" onclick="handleBeatmapClick(352, event)"><input type="checkbox" class="checkbox">352</li>
-                    <li data-beatmap="354" onclick="handleBeatmapClick(354, event)"><input type="checkbox" class="checkbox">354</li>
-                    <li data-beatmap="357" onclick="handleBeatmapClick(357, event)"><input type="checkbox" class="checkbox">357</li>
-                    <li data-beatmap="365" onclick="handleBeatmapClick(365, event)"><input type="checkbox" class="checkbox">365</li>
-                    <li data-beatmap="368" onclick="handleBeatmapClick(368, event)"><input type="checkbox" class="checkbox">368</li>
-                    <li data-beatmap="370" onclick="handleBeatmapClick(370, event)"><input type="checkbox" class="checkbox">370</li>
-                </ul>
+                <ul id="bp5BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#5
+                var beatmapId5 = [292, 296, 298, 300, 322, 307, 308, 309, 310, 312, 315, 319, 328, 330, 332, 333, 334, 336, 338, 341, 344, 348, 350, 352, 354, 357, 365, 368, 370];
+
+                // Get the ul element
+                var bp5BeatmapList = document.getElementById("bp5BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId5.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp5BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#6')" data-list="beatmapList6">BP#6</button>
             <div class="beatmap-list" id="beatmapList6">
                 <!-- Beatmap list for BP#6 -->
-                <ul>
-                    <li data-beatmap="456" onclick="handleBeatmapClick(456, event)"><input type="checkbox" class="checkbox">456</li>
-                    <li data-beatmap="423" onclick="handleBeatmapClick(423, event)"><input type="checkbox" class="checkbox">423</li>
-                    <li data-beatmap="398" onclick="handleBeatmapClick(398, event)"><input type="checkbox" class="checkbox">398</li>
-                    <li data-beatmap="418" onclick="handleBeatmapClick(418, event)"><input type="checkbox" class="checkbox">418</li>
-                    <li data-beatmap="420" onclick="handleBeatmapClick(420, event)"><input type="checkbox" class="checkbox">420</li>
-                    <li data-beatmap="426" onclick="handleBeatmapClick(426, event)"><input type="checkbox" class="checkbox">426</li>
-                    <li data-beatmap="428" onclick="handleBeatmapClick(428, event)"><input type="checkbox" class="checkbox">428</li>
-                    <li data-beatmap="706" onclick="handleBeatmapClick(706, event)"><input type="checkbox" class="checkbox">706</li>
-                    <li data-beatmap="989" onclick="handleBeatmapClick(989, event)"><input type="checkbox" class="checkbox">989</li>
-                    <li data-beatmap="612" onclick="handleBeatmapClick(612, event)"><input type="checkbox" class="checkbox">612</li>
-                    <li data-beatmap="1045" onclick="handleBeatmapClick(1045, event)"><input type="checkbox" class="checkbox">1045</li>
-                    <li data-beatmap="615" onclick="handleBeatmapClick(615, event)"><input type="checkbox" class="checkbox">615</li>
-                    <li data-beatmap="627" onclick="handleBeatmapClick(627, event)"><input type="checkbox" class="checkbox">627</li>
-                    <li data-beatmap="659" onclick="handleBeatmapClick(659, event)"><input type="checkbox" class="checkbox">659</li>
-                    <li data-beatmap="669" onclick="handleBeatmapClick(669, event)"><input type="checkbox" class="checkbox">669</li>
-                    <li data-beatmap="1117" onclick="handleBeatmapClick(1117, event)"><input type="checkbox" class="checkbox">1117</li>
-                    <li data-beatmap="925" onclick="handleBeatmapClick(925, event)"><input type="checkbox" class="checkbox">925</li>
-                    <li data-beatmap="713" onclick="handleBeatmapClick(713, event)"><input type="checkbox" class="checkbox">713</li>
-                    <li data-beatmap="725" onclick="handleBeatmapClick(725, event)"><input type="checkbox" class="checkbox">725</li>
-                    <li data-beatmap="734" onclick="handleBeatmapClick(734, event)"><input type="checkbox" class="checkbox">734</li>
-                    <li data-beatmap="915" onclick="handleBeatmapClick(915, event)"><input type="checkbox" class="checkbox">915</li>
-                    <li data-beatmap="1017" onclick="handleBeatmapClick(1017, event)"><input type="checkbox" class="checkbox">1017</li>
-                    <li data-beatmap="955" onclick="handleBeatmapClick(955, event)"><input type="checkbox" class="checkbox">955</li>
-                    <li data-beatmap="980" onclick="handleBeatmapClick(980, event)"><input type="checkbox" class="checkbox">980</li>
-                    <li data-beatmap="919" onclick="handleBeatmapClick(919, event)"><input type="checkbox" class="checkbox">919</li>
-                    <li data-beatmap="940" onclick="handleBeatmapClick(940, event)"><input type="checkbox" class="checkbox">940</li>
-                    <li data-beatmap="1147" onclick="handleBeatmapClick(1147, event)"><input type="checkbox" class="checkbox">1147</li>
-                    <li data-beatmap="957" onclick="handleBeatmapClick(957, event)"><input type="checkbox" class="checkbox">957</li>
-                    <li data-beatmap="1131" onclick="handleBeatmapClick(1131, event)"><input type="checkbox" class="checkbox">1131</li>
-                    <li data-beatmap="994" onclick="handleBeatmapClick(994, event)"><input type="checkbox" class="checkbox">994</li>
-                    <li data-beatmap="1020" onclick="handleBeatmapClick(1020, event)"><input type="checkbox" class="checkbox">1020</li>
-                    <li data-beatmap="1089" onclick="handleBeatmapClick(1089, event)"><input type="checkbox" class="checkbox">1089</li>
-                    <li data-beatmap="1255" onclick="handleBeatmapClick(1255, event)"><input type="checkbox" class="checkbox">1255</li>
-                    <li data-beatmap="1304" onclick="handleBeatmapClick(1304, event)"><input type="checkbox" class="checkbox">1304</li>
-                </ul>
+                <ul id="bp6BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#6
+                var beatmapId6 = [456, 423, 398, 418, 420, 426, 428, 706, 989, 612, 1045, 615, 627, 659, 669, 1117, 925, 713, 725, 734, 915, 1017, 955, 980, 919, 940, 1147, 957, 1131, 994, 1020, 1089, 1255, 1304];
+
+                // Get the ul element
+                var bp6BeatmapList = document.getElementById("bp6BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId6.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp6BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#7')" data-list="beatmapList7">BP#7</button>
             <div class="beatmap-list" id="beatmapList7">
                 <!-- Beatmap list for BP#7 -->
-                <ul>
-                    <li data-beatmap="1377" onclick="handleBeatmapClick(1377, event)"><input type="checkbox" class="checkbox">1377</li>
-                    <li data-beatmap="2030" onclick="handleBeatmapClick(2030, event)"><input type="checkbox" class="checkbox">2030</li>
-                    <li data-beatmap="1784" onclick="handleBeatmapClick(1784, event)"><input type="checkbox" class="checkbox">1784</li>
-                    <li data-beatmap="1855" onclick="handleBeatmapClick(1855, event)"><input type="checkbox" class="checkbox">1855</li>
-                    <li data-beatmap="1394" onclick="handleBeatmapClick(1394, event)"><input type="checkbox" class="checkbox">1394</li>
-                    <li data-beatmap="1629" onclick="handleBeatmapClick(1629, event)"><input type="checkbox" class="checkbox">1629</li>
-                    <li data-beatmap="1530" onclick="handleBeatmapClick(1530, event)"><input type="checkbox" class="checkbox">1530</li>
-                    <li data-beatmap="1410" onclick="handleBeatmapClick(1410, event)"><input type="checkbox" class="checkbox">1410</li>
-                    <li data-beatmap="1362" onclick="handleBeatmapClick(1362, event)"><input type="checkbox" class="checkbox">1362</li>
-                    <li data-beatmap="1562" onclick="handleBeatmapClick(1562, event)"><input type="checkbox" class="checkbox">1562</li>
-                    <li data-beatmap="1572" onclick="handleBeatmapClick(1572, event)"><input type="checkbox" class="checkbox">1572</li>
-                    <li data-beatmap="1483" onclick="handleBeatmapClick(1483, event)"><input type="checkbox" class="checkbox">1483</li>
-                    <li data-beatmap="1433" onclick="handleBeatmapClick(1433, event)"><input type="checkbox" class="checkbox">1433</li>
-                    <li data-beatmap="1488" onclick="handleBeatmapClick(1488, event)"><input type="checkbox" class="checkbox">1488</li>
-                    <li data-beatmap="1782" onclick="handleBeatmapClick(1782, event)"><input type="checkbox" class="checkbox">1782</li>
-                    <li data-beatmap="1409" onclick="handleBeatmapClick(1409, event)"><input type="checkbox" class="checkbox">1409</li>
-                    <li data-beatmap="1601" onclick="handleBeatmapClick(1601, event)"><input type="checkbox" class="checkbox">1601</li>
-                    <li data-beatmap="1534" onclick="handleBeatmapClick(1534, event)"><input type="checkbox" class="checkbox">1534</li>
-                    <li data-beatmap="1420" onclick="handleBeatmapClick(1420, event)"><input type="checkbox" class="checkbox">1420</li>
-                    <li data-beatmap="1427" onclick="handleBeatmapClick(1427, event)"><input type="checkbox" class="checkbox">1427</li>
-                    <li data-beatmap="1852" onclick="handleBeatmapClick(1852, event)"><input type="checkbox" class="checkbox">1852</li>
-                    <li data-beatmap="1904" onclick="handleBeatmapClick(1904, event)"><input type="checkbox" class="checkbox">1904</li>
-                    <li data-beatmap="1567" onclick="handleBeatmapClick(1567, event)"><input type="checkbox" class="checkbox">1567</li>
-                    <li data-beatmap="1891" onclick="handleBeatmapClick(1891, event)"><input type="checkbox" class="checkbox">1891</li>
-                    <li data-beatmap="1692" onclick="handleBeatmapClick(1692, event)"><input type="checkbox" class="checkbox">1692</li>
-                    <li data-beatmap="1968" onclick="handleBeatmapClick(1968, event)"><input type="checkbox" class="checkbox">1968</li>
-                    <li data-beatmap="1634" onclick="handleBeatmapClick(1634, event)"><input type="checkbox" class="checkbox">1634</li>
-                    <li data-beatmap="1672" onclick="handleBeatmapClick(1672, event)"><input type="checkbox" class="checkbox">1672</li>
-                    <li data-beatmap="1744" onclick="handleBeatmapClick(1744, event)"><input type="checkbox" class="checkbox">1744</li>
-                    <li data-beatmap="2038" onclick="handleBeatmapClick(2038, event)"><input type="checkbox" class="checkbox">2038</li>
-                    <li data-beatmap="1947" onclick="handleBeatmapClick(1947, event)"><input type="checkbox" class="checkbox">1947</li>
-                    <li data-beatmap="2002" onclick="handleBeatmapClick(2002, event)"><input type="checkbox" class="checkbox">2002</li>
-                    <li data-beatmap="2041" onclick="handleBeatmapClick(2041, event)"><input type="checkbox" class="checkbox">2041</li>
-                </ul>
+                <ul id="bp7BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#7
+                var beatmapId7 = [1377, 2030, 1784, 1855, 1394, 1629, 1530, 1410, 1362, 1562, 1572, 1483, 1433, 1488, 1782, 1409, 1601, 1534, 1420, 1427, 1852, 1904, 1567, 1891, 1692, 1968, 1634, 1672, 1744, 2038, 1947, 2002, 2041];
+
+                // Get the ul element
+                var bp7BeatmapList = document.getElementById("bp7BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId7.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp7BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#8')" data-list="beatmapList8">BP#8</button>
             <div class="beatmap-list" id="beatmapList8">
                 <!-- Beatmap list for BP#8 -->
-                <ul>
-                    <li data-beatmap="2911" onclick="handleBeatmapClick(2911, event)"><input type="checkbox" class="checkbox">2911</li>
-                    <li data-beatmap="2472" onclick="handleBeatmapClick(2472, event)"><input type="checkbox" class="checkbox">2472</li>
-                    <li data-beatmap="2482" onclick="handleBeatmapClick(2482, event)"><input type="checkbox" class="checkbox">2482</li>
-                    <li data-beatmap="3290" onclick="handleBeatmapClick(3290, event)"><input type="checkbox" class="checkbox">3290</li>
-                    <li data-beatmap="3521" onclick="handleBeatmapClick(3521, event)"><input type="checkbox" class="checkbox">3521</li>
-                    <li data-beatmap="2043" onclick="handleBeatmapClick(2043, event)"><input type="checkbox" class="checkbox">2043</li>
-                    <li data-beatmap="2409" onclick="handleBeatmapClick(2409, event)"><input type="checkbox" class="checkbox">2409</li>
-                    <li data-beatmap="2604" onclick="handleBeatmapClick(2604, event)"><input type="checkbox" class="checkbox">2604</li>
-                    <li data-beatmap="3501" onclick="handleBeatmapClick(3501, event)"><input type="checkbox" class="checkbox">3501</li>
-                    <li data-beatmap="2200" onclick="handleBeatmapClick(2200, event)"><input type="checkbox" class="checkbox">2200</li>
-                    <li data-beatmap="2452" onclick="handleBeatmapClick(2452, event)"><input type="checkbox" class="checkbox">2452</li>
-                    <li data-beatmap="2832" onclick="handleBeatmapClick(2832, event)"><input type="checkbox" class="checkbox">2832</li>
-                    <li data-beatmap="2834" onclick="handleBeatmapClick(2834, event)"><input type="checkbox" class="checkbox">2834</li>
-                    <li data-beatmap="2745" onclick="handleBeatmapClick(2745, event)"><input type="checkbox" class="checkbox">2745</li>
-                    <li data-beatmap="2667" onclick="handleBeatmapClick(2667, event)"><input type="checkbox" class="checkbox">2667</li>
-                    <li data-beatmap="3206" onclick="handleBeatmapClick(3206, event)"><input type="checkbox" class="checkbox">3206</li>
-                    <li data-beatmap="3137" onclick="handleBeatmapClick(3137, event)"><input type="checkbox" class="checkbox">3137</li>
-                    <li data-beatmap="3190" onclick="handleBeatmapClick(3190, event)"><input type="checkbox" class="checkbox">3190</li>
-                    <li data-beatmap="2904" onclick="handleBeatmapClick(2904, event)"><input type="checkbox" class="checkbox">2904</li>
-                    <li data-beatmap="3350" onclick="handleBeatmapClick(3350, event)"><input type="checkbox" class="checkbox">3350</li>
-                    <li data-beatmap="3400" onclick="handleBeatmapClick(3400, event)"><input type="checkbox" class="checkbox">3400</li>
-                    <li data-beatmap="3523" onclick="handleBeatmapClick(3523, event)"><input type="checkbox" class="checkbox">3523</li>
-                    <li data-beatmap="3316" onclick="handleBeatmapClick(3316, event)"><input type="checkbox" class="checkbox">3316</li>
-                    <li data-beatmap="3152" onclick="handleBeatmapClick(3152, event)"><input type="checkbox" class="checkbox">3152</li>
-                    <li data-beatmap="3297" onclick="handleBeatmapClick(3297, event)"><input type="checkbox" class="checkbox">3297</li>
-                    <li data-beatmap="3518" onclick="handleBeatmapClick(3518, event)"><input type="checkbox" class="checkbox">3518</li>
-                    <li data-beatmap="3488" onclick="handleBeatmapClick(3488, event)"><input type="checkbox" class="checkbox">3488</li>
-                    <li data-beatmap="3485" onclick="handleBeatmapClick(3485, event)"><input type="checkbox" class="checkbox">3485</li>
-                </ul>
+                <ul id="bp8BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#8
+                var beatmapId8 = [2911, 2472, 2482, 3290, 3521, 2043, 2409, 2604, 3501, 2200, 2452, 2832, 2834, 2745, 2667, 3206, 3137, 3190, 2904, 3350, 3400, 3523, 3316, 3152, 3297, 3518, 3488, 3485];
+
+                // Get the ul element
+                var bp8BeatmapList = document.getElementById("bp8BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId8.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp8BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#9')" data-list="beatmapList9">BP#9</button>
             <div class="beatmap-list" id="beatmapList9">
                 <!-- Beatmap list for BP#9 -->
-                <ul>
-                    <li data-beatmap="3889" onclick="handleBeatmapClick(3889, event)"><input type="checkbox" class="checkbox">3889</li>
-                    <li data-beatmap="3849" onclick="handleBeatmapClick(3849, event)"><input type="checkbox" class="checkbox">3849</li>
-                    <li data-beatmap="4204" onclick="handleBeatmapClick(4204, event)"><input type="checkbox" class="checkbox">4204</li>
-                    <li data-beatmap="3766" onclick="handleBeatmapClick(3766, event)"><input type="checkbox" class="checkbox">3766</li>
-                    <li data-beatmap="3573" onclick="handleBeatmapClick(3573, event)"><input type="checkbox" class="checkbox">3573</li>
-                    <li data-beatmap="3625" onclick="handleBeatmapClick(3625, event)"><input type="checkbox" class="checkbox">3625</li>
-                    <li data-beatmap="3782" onclick="handleBeatmapClick(3782, event)"><input type="checkbox" class="checkbox">3782</li>
-                    <li data-beatmap="4178" onclick="handleBeatmapClick(4178, event)"><input type="checkbox" class="checkbox">4178</li>
-                    <li data-beatmap="3542" onclick="handleBeatmapClick(3542, event)"><input type="checkbox" class="checkbox">3542</li>
-                    <li data-beatmap="4010" onclick="handleBeatmapClick(4010, event)"><input type="checkbox" class="checkbox">4010</li>
-                    <li data-beatmap="3586" onclick="handleBeatmapClick(3586, event)"><input type="checkbox" class="checkbox">3586</li>
-                    <li data-beatmap="3762" onclick="handleBeatmapClick(3762, event)"><input type="checkbox" class="checkbox">3762</li>
-                    <li data-beatmap="3556" onclick="handleBeatmapClick(3556, event)"><input type="checkbox" class="checkbox">3556</li>
-                    <li data-beatmap="3990" onclick="handleBeatmapClick(3990, event)"><input type="checkbox" class="checkbox">3990</li>
-                    <li data-beatmap="3671" onclick="handleBeatmapClick(3671, event)"><input type="checkbox" class="checkbox">3671</li>
-                    <li data-beatmap="3537" onclick="handleBeatmapClick(3537, event)"><input type="checkbox" class="checkbox">3537</li>
-                    <li data-beatmap="4057" onclick="handleBeatmapClick(4057, event)"><input type="checkbox" class="checkbox">4057</li>
-                    <li data-beatmap="3784" onclick="handleBeatmapClick(3784, event)"><input type="checkbox" class="checkbox">3784</li>
-                    <li data-beatmap="3629" onclick="handleBeatmapClick(3629, event)"><input type="checkbox" class="checkbox">3629</li>
-                    <li data-beatmap="3839" onclick="handleBeatmapClick(3839, event)"><input type="checkbox" class="checkbox">3839</li>
-                    <li data-beatmap="4259" onclick="handleBeatmapClick(4259, event)"><input type="checkbox" class="checkbox">4259</li>
-                    <li data-beatmap="3677" onclick="handleBeatmapClick(3677, event)"><input type="checkbox" class="checkbox">3677</li>
-                    <li data-beatmap="3852" onclick="handleBeatmapClick(3852, event)"><input type="checkbox" class="checkbox">3852</li>
-                    <li data-beatmap="3884" onclick="handleBeatmapClick(3884, event)"><input type="checkbox" class="checkbox">3884</li>
-                    <li data-beatmap="3842" onclick="handleBeatmapClick(3842, event)"><input type="checkbox" class="checkbox">3842</li>
-                    <li data-beatmap="3699" onclick="handleBeatmapClick(3699, event)"><input type="checkbox" class="checkbox">3699</li>
-                    <li data-beatmap="3934" onclick="handleBeatmapClick(3934, event)"><input type="checkbox" class="checkbox">3934</li>
-                    <li data-beatmap="3790" onclick="handleBeatmapClick(3790, event)"><input type="checkbox" class="checkbox">3790</li>
-                    <li data-beatmap="3831" onclick="handleBeatmapClick(3831, event)"><input type="checkbox" class="checkbox">3831</li>
-                    <li data-beatmap="3752" onclick="handleBeatmapClick(3752, event)"><input type="checkbox" class="checkbox">3752</li>
-                    <li data-beatmap="4008" onclick="handleBeatmapClick(4008, event)"><input type="checkbox" class="checkbox">4008</li>
-                    <li data-beatmap="4504" onclick="handleBeatmapClick(4504, event)"><input type="checkbox" class="checkbox">4504</li>
-                    <li data-beatmap="4075" onclick="handleBeatmapClick(4075, event)"><input type="checkbox" class="checkbox">4075</li>
-                    <li data-beatmap="4244" onclick="handleBeatmapClick(4244, event)"><input type="checkbox" class="checkbox">4244</li>
-                    <li data-beatmap="4269" onclick="handleBeatmapClick(4269, event)"><input type="checkbox" class="checkbox">4269</li>
-                    <li data-beatmap="4240" onclick="handleBeatmapClick(4240, event)"><input type="checkbox" class="checkbox">4240</li>
-                    <li data-beatmap="4501" onclick="handleBeatmapClick(4501, event)"><input type="checkbox" class="checkbox">4501</li>
-                    <li data-beatmap="4396" onclick="handleBeatmapClick(4396, event)"><input type="checkbox" class="checkbox">4396</li>
-                    <li data-beatmap="4416" onclick="handleBeatmapClick(4416, event)"><input type="checkbox" class="checkbox">4416</li>
-                    <li data-beatmap="4520" onclick="handleBeatmapClick(4520, event)"><input type="checkbox" class="checkbox">4520</li>
-                </ul>
+                <ul id="bp9BeatmapList"></ul>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array of beatmap IDs for BP#9
+                var beatmapId9 = [3889, 3849, 4204, 3766, 3573, 3625, 3782, 4178, 3542, 4010, 3586, 3762, 3556, 3990, 3671, 3537, 4057, 3784, 3629, 3839, 4259, 3677, 3852, 3884, 3842, 3699, 3934, 3790, 3831, 3752, 4008, 4504, 4075, 4244, 4269, 4240, 4501, 4396, 4416, 4520];
+
+                // Get the ul element
+                var bp9BeatmapList = document.getElementById("bp9BeatmapList");
+
+                // Loop through beatmap IDs and create list items
+                beatmapId9.forEach(function (beatmapId) {
+                    var li = document.createElement("li");
+                    li.setAttribute("data-beatmap", beatmapId);
+                    li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                    li.onclick = function (event) {
+                        handleBeatmapClick(beatmapId, event);
+                    };
+
+                    // Append li to ul
+                    bp9BeatmapList.appendChild(li);
+                });
+            });
+        </script>
+
 
         <div class="dropdown-container">
             <button class="dropdown-button" onclick="toggleBeatmapList('BP#10')" data-list="beatmapList10">BP#10</button>
