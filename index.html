@@ -203,21 +203,30 @@
                 fetch('./data/beatmapData.json')
                     .then(response => response.json())
                     .then(data => {
-                        // Access the beatmapIds array for BP#1
-                        var beatmapId1 = data.beatmapPacks.find(pack => pack.packName === "BP#1").beatmapIds;
+                        // Define the target pack number
+                        const targetPackNumber = 1;
 
-                        // Loop through beatmap IDs and create list items
-                        beatmapId1.forEach(function (beatmapId) {
-                            var li = document.createElement("li");
-                            li.setAttribute("data-beatmap", beatmapId);
-                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                            li.onclick = function (event) {
-                                handleBeatmapClick(beatmapId, event);
-                            };
+                        // Find the target pack with the matching number
+                        const targetPack = data.beatmapPacks.find(pack => pack.packName.match(/\d+/)[0] === targetPackNumber.toString());
 
-                            // Append li to ul
-                            bp1BeatmapList.appendChild(li);
-                        });
+                        // If the target pack is found, create list items
+                        if (targetPack) {
+                            // Get the ul element for the target pack
+                            const targetPackUl = document.getElementById(`bp${targetPackNumber}BeatmapList`);
+
+                            // Loop through beatmap IDs and create list items
+                            targetPack.beatmapIds.forEach(beatmapId => {
+                                const li = document.createElement("li");
+                                li.setAttribute("data-beatmap", beatmapId);
+                                li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                                li.onclick = event => handleBeatmapClick(beatmapId, event);
+
+                                // Append li to ul
+                                targetPackUl.appendChild(li);
+                            });
+                        } else {
+                            console.error(`Beatmap pack with number ${targetPackNumber} not found in the JSON file.`);
+                        }
                     })
                     .catch(error => console.error('Error loading beatmap data:', error));
             });
@@ -235,25 +244,34 @@
                 // Get the ul element
                 var bp2BeatmapList = document.getElementById("bp2BeatmapList");
 
-                // Load beatmap data from JSON file for BP#2
+                // Load beatmap data from JSON file
                 fetch('./data/beatmapData.json')
                     .then(response => response.json())
                     .then(data => {
-                        // Access the beatmapIds array for BP#2
-                        var beatmapId2 = data.beatmapPacks.find(pack => pack.packName === "BP#2").beatmapIds;
+                        // Define the target pack number
+                        const targetPackNumber = 2;
 
-                        // Loop through beatmap IDs and create list items
-                        beatmapId2.forEach(function (beatmapId) {
-                            var li = document.createElement("li");
-                            li.setAttribute("data-beatmap", beatmapId);
-                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                            li.onclick = function (event) {
-                                handleBeatmapClick(beatmapId, event);
-                            };
+                        // Find the target pack with the matching number
+                        const targetPack = data.beatmapPacks.find(pack => pack.packName.match(/\d+/)[0] === targetPackNumber.toString());
 
-                            // Append li to ul
-                            bp2BeatmapList.appendChild(li);
-                        });
+                        // If the target pack is found, create list items
+                        if (targetPack) {
+                            // Get the ul element for the target pack
+                            const targetPackUl = document.getElementById(`bp${targetPackNumber}BeatmapList`);
+
+                            // Loop through beatmap IDs and create list items
+                            targetPack.beatmapIds.forEach(beatmapId => {
+                                const li = document.createElement("li");
+                                li.setAttribute("data-beatmap", beatmapId);
+                                li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                                li.onclick = event => handleBeatmapClick(beatmapId, event);
+
+                                // Append li to ul
+                                targetPackUl.appendChild(li);
+                            });
+                        } else {
+                            console.error(`Beatmap pack with number ${targetPackNumber} not found in the JSON file.`);
+                        }
                     })
                     .catch(error => console.error('Error loading beatmap data:', error));
             });
@@ -271,24 +289,34 @@
                 // Get the ul element
                 var bp3BeatmapList = document.getElementById("bp3BeatmapList");
 
-                // Load beatmap data from JSON file for BP#3
+                // Load beatmap data from JSON file
                 fetch('./data/beatmapData.json')
                     .then(response => response.json())
                     .then(data => {
-                        // Access the beatmapIds array for BP#3
-                        var beatmapId3 = data.beatmapPacks.find(pack => pack.packName === "BP#3").beatmapIds;
+                        // Define the target pack number
+                        const targetPackNumber = 3;
 
-                        // Loop through beatmap IDs and create list items
-                        beatmapId3.forEach(function (beatmapId) {
-                            var li = document.createElement("li");
-                            li.setAttribute("data-beatmap", beatmapId);
-                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                            li.onclick = function (event) {
-                                handleBeatmapClick(beatmapId, event);
-                            };
-                            // Append li to ul
-                            bp3BeatmapList.appendChild(li);
-                        });
+                        // Find the target pack with the matching number
+                        const targetPack = data.beatmapPacks.find(pack => pack.packName.match(/\d+/)[0] === targetPackNumber.toString());
+
+                        // If the target pack is found, create list items
+                        if (targetPack) {
+                            // Get the ul element for the target pack
+                            const targetPackUl = document.getElementById(`bp${targetPackNumber}BeatmapList`);
+
+                            // Loop through beatmap IDs and create list items
+                            targetPack.beatmapIds.forEach(beatmapId => {
+                                const li = document.createElement("li");
+                                li.setAttribute("data-beatmap", beatmapId);
+                                li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                                li.onclick = event => handleBeatmapClick(beatmapId, event);
+
+                                // Append li to ul
+                                targetPackUl.appendChild(li);
+                            });
+                        } else {
+                            console.error(`Beatmap pack with number ${targetPackNumber} not found in the JSON file.`);
+                        }
                     })
                     .catch(error => console.error('Error loading beatmap data:', error));
             });
@@ -306,24 +334,34 @@
                 // Get the ul element
                 var bp4BeatmapList = document.getElementById("bp4BeatmapList");
 
-                // Load beatmap data from JSON file for BP#4
+                // Load beatmap data from JSON file
                 fetch('./data/beatmapData.json')
                     .then(response => response.json())
                     .then(data => {
-                        // Access the beatmapIds array for BP#4
-                        var beatmapId4 = data.beatmapPacks.find(pack => pack.packName === "BP#4").beatmapIds;
+                        // Define the target pack number
+                        const targetPackNumber = 4;
 
-                        // Loop through beatmap IDs and create list items
-                        beatmapId4.forEach(function (beatmapId) {
-                            var li = document.createElement("li");
-                            li.setAttribute("data-beatmap", beatmapId);
-                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                            li.onclick = function (event) {
-                                handleBeatmapClick(beatmapId, event);
-                            };
-                            // Append li to ul
-                            bp4BeatmapList.appendChild(li);
-                        });
+                        // Find the target pack with the matching number
+                        const targetPack = data.beatmapPacks.find(pack => pack.packName.match(/\d+/)[0] === targetPackNumber.toString());
+
+                        // If the target pack is found, create list items
+                        if (targetPack) {
+                            // Get the ul element for the target pack
+                            const targetPackUl = document.getElementById(`bp${targetPackNumber}BeatmapList`);
+
+                            // Loop through beatmap IDs and create list items
+                            targetPack.beatmapIds.forEach(beatmapId => {
+                                const li = document.createElement("li");
+                                li.setAttribute("data-beatmap", beatmapId);
+                                li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                                li.onclick = event => handleBeatmapClick(beatmapId, event);
+
+                                // Append li to ul
+                                targetPackUl.appendChild(li);
+                            });
+                        } else {
+                            console.error(`Beatmap pack with number ${targetPackNumber} not found in the JSON file.`);
+                        }
                     })
                     .catch(error => console.error('Error loading beatmap data:', error));
             });
@@ -341,24 +379,34 @@
                 // Get the ul element
                 var bp5BeatmapList = document.getElementById("bp5BeatmapList");
 
-                // Load beatmap data from JSON file for BP#4
+                // Load beatmap data from JSON file
                 fetch('./data/beatmapData.json')
                     .then(response => response.json())
                     .then(data => {
-                        // Access the beatmapIds array for BP#5
-                        var beatmapId5 = data.beatmapPacks.find(pack => pack.packName === "BP#5").beatmapIds;
+                        // Define the target pack number
+                        const targetPackNumber = 5;
 
-                        // Loop through beatmap IDs and create list items
-                        beatmapId5.forEach(function (beatmapId) {
-                            var li = document.createElement("li");
-                            li.setAttribute("data-beatmap", beatmapId);
-                            li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
-                            li.onclick = function (event) {
-                                handleBeatmapClick(beatmapId, event);
-                            };
-                            // Append li to ul
-                            bp5BeatmapList.appendChild(li);
-                        });
+                        // Find the target pack with the matching number
+                        const targetPack = data.beatmapPacks.find(pack => pack.packName.match(/\d+/)[0] === targetPackNumber.toString());
+
+                        // If the target pack is found, create list items
+                        if (targetPack) {
+                            // Get the ul element for the target pack
+                            const targetPackUl = document.getElementById(`bp${targetPackNumber}BeatmapList`);
+
+                            // Loop through beatmap IDs and create list items
+                            targetPack.beatmapIds.forEach(beatmapId => {
+                                const li = document.createElement("li");
+                                li.setAttribute("data-beatmap", beatmapId);
+                                li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
+                                li.onclick = event => handleBeatmapClick(beatmapId, event);
+
+                                // Append li to ul
+                                targetPackUl.appendChild(li);
+                            });
+                        } else {
+                            console.error(`Beatmap pack with number ${targetPackNumber} not found in the JSON file.`);
+                        }
                     })
                     .catch(error => console.error('Error loading beatmap data:', error));
             });
