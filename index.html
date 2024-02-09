@@ -347,13 +347,13 @@
 
         // Json Fetch Method, This is an important method to gather data from JSON and gets called for each button.
         async function loadBeatmapPack(targetPackNumber) {
-            try {
+            try {          
                 // Load beatmap data from JSON file
-                const response = await fetch('./data/beatmapData.json');
+                const response = await fetch('./data/beatmapDataV2.json');
                 const data = await response.json();
 
                 // Find the target pack with the matching number
-                const targetPack = data.beatmapPacks.find(pack => Number(pack.packName.split('#')[1]) === targetPackNumber);
+                const targetPack = data.find(pack => Number(pack.packName.split('S')[1]) === targetPackNumber);
 
                 // If the target pack is found, create list items
                 if (targetPack) {
@@ -364,7 +364,7 @@
                     targetPackUl.innerHTML = '';
 
                     // Loop through beatmap IDs and create list items
-                    targetPack.beatmapIds.forEach(beatmapId => {
+                    targetPack.beatmap_ids.forEach(beatmapId => {
                         const li = document.createElement("li");
                         li.setAttribute("data-beatmap", beatmapId);
                         li.innerHTML = `<input type="checkbox" class="checkbox">${beatmapId}`;
@@ -423,7 +423,7 @@
         }
 
         // Call the function to generate HTML for beatmap packs 1 to 60
-        const generatedHTML = generateBeatmapPackHTML(1, 2000);
+        const generatedHTML = generateBeatmapPackHTML(1, 1400);
 
         // Append the generated HTML to the document body
         document.body.innerHTML += generatedHTML;
