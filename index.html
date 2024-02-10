@@ -347,7 +347,7 @@
 
         // Json Fetch Method, This is an important method to gather data from JSON and gets called for each button.
         async function loadBeatmapPack(targetPackNumber) {
-            try {          
+            try {
                 // Load beatmap data from JSON file
                 const response = await fetch('./data/beatmapDataV2.json');
                 const data = await response.json();
@@ -381,13 +381,11 @@
             }
         }
 
-        // Generate buttons dynamically
-        function generateBeatmapPackHTML(start, end) {
+        async function generateAndLoadBeatmapPacks(start, end) {
             let htmlCode = '';
 
             for (let i = start; i <= end; i++) {
-                if ((i - start) % 1 === 0) {
-                    // Start a new button container every 14 buttons
+                if ((i - start) % 14 === 0) {
                     htmlCode += `\n<div class="button-container">\n`;
                 }
 
@@ -395,38 +393,27 @@
     <div class="dropdown-container">
         <button class="dropdown-button" onclick="toggleBeatmapList('BP#${i}')" data-list="beatmapList${i}">BP#${i}</button>
         <div class="beatmap-list" id="beatmapList${i}">
-            <!-- Beatmap list for BP#${i} -->
             <ul id="bp${i}BeatmapList"></ul>
         </div>
     </div>
 `;
 
-                if ((i - start + 1) % 1 === 0 || i === end) {
-                    // Close the button container every 14 buttons or on the last button
+                if ((i - start + 1) % 14 === 0 || i === end) {
                     htmlCode += `\n</div>\n`;
-
-                    // Generate the script dynamically
-                    const script = document.createElement("script");
-                    script.textContent = `
-            document.addEventListener("DOMContentLoaded", function () {
-                // Call the function with the desired beatmap pack number
-                loadBeatmapPack(${i});
-            });
-        `;
-
-                    // Append the script to the document
-                    document.body.appendChild(script);
                 }
             }
 
-            return htmlCode;
+            // Append the generated HTML to the document body
+            document.body.innerHTML += htmlCode;
+
+            // Call the loadBeatmapPack function for each beatmap pack after generating the HTML
+            for (let i = start; i <= end; i++) {
+                await loadBeatmapPack(i);
+            }
         }
 
-        // Call the function to generate HTML for beatmap packs 1 to 60
-        const generatedHTML = generateBeatmapPackHTML(1, 1400);
-
-        // Append the generated HTML to the document body
-        document.body.innerHTML += generatedHTML;
+        // Call the function to generate HTML for beatmap packs 1 to 1388 and load them
+        generateAndLoadBeatmapPacks(1, 1388);
     </script>
-</body>
-</html>
+</body >
+</html >
